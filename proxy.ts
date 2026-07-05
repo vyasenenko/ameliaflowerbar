@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { sendTelegramMessage } from "./lib/telegram";
 
 const VISIT_COOKIE = "visit_notified";
+const SITE_NAME = "D. Amélia Flower Bar";
 
 function isPageNavigation(request: NextRequest): boolean {
   if (request.method !== "GET") {
@@ -58,6 +59,7 @@ export function proxy(request: NextRequest) {
     timeZone: "Europe/Lisbon",
   });
   const path = request.nextUrl.pathname || "/";
+  const siteUrl = `${request.nextUrl.origin}${path}`;
   const referer = request.headers.get("referer") ?? "direct";
   const ip = getClientIp(request);
   const userAgent = request.headers.get("user-agent") ?? "unknown";
@@ -65,9 +67,10 @@ export function proxy(request: NextRequest) {
   const message = [
     "🌸 Новый визит на сайт",
     "",
+    `🌐 ${SITE_NAME}`,
+    `🔗 ${siteUrl}`,
     `🕐 ${time}`,
-    `📄 ${path}`,
-    `🔗 ${referer}`,
+    `↩️ ${referer}`,
     `📍 ${ip}`,
     `🖥 ${userAgent.slice(0, 160)}`,
   ].join("\n");
