@@ -720,7 +720,6 @@ export default function Home() {
 
         <footer className="site-footer">
           {t.footer(new Date().getFullYear())}
-          <span className="footer-credit"> · by 2for1Design</span>
         </footer>
       </div>
 
