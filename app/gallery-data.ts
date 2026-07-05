@@ -21,7 +21,6 @@ export const GALLERY: GalleryItem[] = [
   { src: "/gallery/w_13.jpg", cat: "weddings", w: 1500, h: 1000 },
   { src: "/gallery/w_14.jpg", cat: "weddings", w: 1500, h: 2250 },
   { src: "/gallery/c_01.jpg", cat: "commercial", w: 1500, h: 1000 },
-  { src: "/gallery/c_02.jpg", cat: "commercial", w: 1500, h: 1000 },
   { src: "/gallery/c_03.jpg", cat: "commercial", w: 1500, h: 1000 },
   { src: "/gallery/c_04.jpg", cat: "commercial", w: 1024, h: 683 },
   { src: "/gallery/c_05.jpg", cat: "commercial", w: 1500, h: 2250 },
